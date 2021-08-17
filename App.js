@@ -5,6 +5,10 @@ import Constants from 'expo-constants';
 import Logo from './src/components/Logo'
 import * as Font from 'expo-font';
 import AppLoading  from 'expo-app-loading';
+import Home from './src/components/User Components/Home';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import Welcome from './src/components/Welcome';
 
 const fetchFonts = () => {
   return Font.loadAsync({
@@ -14,7 +18,7 @@ const fetchFonts = () => {
   });
   };
   
-  
+const Stack = createStackNavigator()
 
 export default function App() {
   const [dataLoaded, setDataLoaded] = useState(false);
@@ -32,10 +36,11 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <StatusBar style="auto" />
-      <Logo/>
-      <TouchableOpacity><Text style={styles.forUserButton}>For user</Text></TouchableOpacity>
-      <TouchableOpacity><Text style={styles.forCreatorButton}>For creator</Text></TouchableOpacity>
+      <NavigationContainer>
+        <Stack.Navigator>  
+        <Stack.Screen name={"Welcome"} component={Welcome}/>
+        </Stack.Navigator>
+      </NavigationContainer>
     </View>
   );
 }
@@ -43,28 +48,10 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#ecf0f1',
+    backgroundColor: 'white',
     alignItems: 'center',
     justifyContent: 'center',
     paddingTop: Constants.statusBarHeight,
   },
-  forUserButton: {
-    fontFamily: 'epilogue-medium',
-    fontSize: 30,
-    backgroundColor: 'white',
-    paddingHorizontal: 70,
-    paddingVertical: 5,
-    borderRadius: 100,
-    marginTop: 100
-  },
-  forCreatorButton: {
-    fontFamily: 'epilogue-medium',
-    fontSize: 30,
-    backgroundColor: 'orange',
-    color: 'white',
-    paddingHorizontal: 50,
-    paddingVertical: 5,
-    borderRadius: 100,
-    marginVertical: 30
-  },
+  
 });

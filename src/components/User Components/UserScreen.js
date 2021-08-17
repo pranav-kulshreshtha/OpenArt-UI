@@ -6,6 +6,7 @@ import { getHeaderTitle } from '@react-navigation/elements';
 import {NavigationContainer} from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import Icon from 'react-native-vector-icons/Ionicons';
+import Home from './Home'
 
 const Drawer = createDrawerNavigator();
 export const AppContext = React.createContext();
@@ -18,8 +19,7 @@ export default function App() {
     <View style={styles.container}>
     <NavigationContainer>
     <Drawer.Navigator initialRouteName="Home" screenOptions={{showHeader: false}} >
-      <Drawer.Screen name="Home" component={Home} />
-      
+      <Drawer.Screen name="Home" component={Home}/>
     </Drawer.Navigator>
     </NavigationContainer>
     </View>
