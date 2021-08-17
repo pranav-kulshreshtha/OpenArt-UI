@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import { View, Text, Image, StyleSheet, Pressable } from 'react-native';
 import {Card} from 'react-native-elements';
+import { TextInput } from 'react-native-gesture-handler';
 import Ionicon from 'react-native-vector-icons/Ionicons';
 
 export default function ArtPost(props){
@@ -12,9 +13,11 @@ export default function ArtPost(props){
         borderless: true,
       };
 
+    const myURL = require('../../../assets/my_artwork_2.png')
+
     return (
        <Card containerStyle={styles.artCardContainer} >
-        <Image style={styles.artworkImage} source={require('../../../assets/my_artwork_1.png')}/>
+        <Image style={styles.artworkImage} source={ props.artImageURL }/>
         <Text style={styles.titleArtText} >{props && props.artTitle || 'Silent Wave' }</Text>
         <View style={{flexDirection: 'row'}}>
             <Image style={styles.artistImage} source={ require('../../../assets/artist_1.png') }/>
