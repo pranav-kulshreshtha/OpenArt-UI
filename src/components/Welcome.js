@@ -9,7 +9,7 @@ export default function Welcome({navigation}) {
     <View style={styles.container}>
       <StatusBar style="auto" />
       <Logo/>
-      <TouchableOpacity onPress={()=>{navigation.navigate("Home")}} ><Text style={styles.forUserButton}>For user</Text></TouchableOpacity>
+      <TouchableOpacity onPress={()=>{navigation.navigate("UserScreen")}} ><Text style={styles.forUserButton}>For user</Text></TouchableOpacity>
       <TouchableOpacity><Text style={styles.forCreatorButton}>For creator</Text></TouchableOpacity>
     </View>
   );
