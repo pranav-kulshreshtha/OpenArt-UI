@@ -8,6 +8,7 @@ import SimpleLineIcon from 'react-native-vector-icons/SimpleLineIcons';
 import Ionicon from 'react-native-vector-icons/Ionicons';
 import { artData } from '../../../artData';
 import ArtPost from '../utils/ArtPost';
+import LiveAuctions from './LiveAuctions';
 
 
 export default function Home(){
@@ -33,9 +34,9 @@ export default function Home(){
                 {
                     artData.map((item)=>{
                         return (
-                            <View>
+                            <View key={item.id}>
                             <View style={{alignItems: 'center'}} >
-                            <ArtPost key={item.id} artistImageURL={item.artistImageURL} artTitle={item.artwork} 
+                            <ArtPost artistImageURL={item.artistImageURL} artTitle={item.artwork} 
                                 artImageURL={item.artImageURL} artistName={item.artist} 
                                 artistTitle={item.artistTitle} liked={item.liked} />
                             </View>
@@ -55,6 +56,7 @@ export default function Home(){
                         );
                     })
                 }
+                <LiveAuctions/>
             </View>
             </ScrollView>
         </View>
@@ -122,5 +124,6 @@ const styles = StyleSheet.create({
         fontSize: 22,
         marginHorizontal: 10,
         textAlign: 'center',
+        marginBottom: 120,
     },
 });
