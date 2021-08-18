@@ -40,10 +40,10 @@ export default function App() {
     <View style={styles.container}>
       <NavigationContainer>
         <Stack.Navigator screenOptions={{headerShown:false}} >  
-        <Stack.Screen name={'ItemDetail'} component={ItemDetail}/>
         <Stack.Screen name={'Welcome'} component={Welcome}/>
         <Stack.Screen name={'Home'} component={Home}/>
         <Stack.Screen name={'UserScreen'} component={UserScreen}/>
+        <Stack.Screen name={'ItemDetail'} component={ItemDetail}/>
         </Stack.Navigator>
       </NavigationContainer>
     </View>

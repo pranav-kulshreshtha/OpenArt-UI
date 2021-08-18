@@ -1,6 +1,7 @@
 {
   "expo": {
     "name": "openart-app",
+    "icon":"./assets/icon.png",
     "slug": "openart-app",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -17,12 +18,16 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.demo.openart",
+      "buildNumber": "1.0.0"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
+        "backgroundColor": "#FFFFFF",
+        "package": "com.demo.openart",
+        "versionCode": 1
       }
     },
     "web": {
