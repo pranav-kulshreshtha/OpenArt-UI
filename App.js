@@ -10,7 +10,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Welcome from './src/components/Welcome';
 import UserScreen from './src/components/User Components/UserScreen';
-import ArtPost from './src/components/utils/ArtPost';
+import ItemDetail from './src/components/User Components/ItemDetail';
 
 const fetchFonts = () => {
   return Font.loadAsync({
@@ -40,6 +40,7 @@ export default function App() {
     <View style={styles.container}>
       <NavigationContainer>
         <Stack.Navigator screenOptions={{headerShown:false}} >  
+        <Stack.Screen name={'ItemDetail'} component={ItemDetail}/>
         <Stack.Screen name={'Welcome'} component={Welcome}/>
         <Stack.Screen name={'Home'} component={Home}/>
         <Stack.Screen name={'UserScreen'} component={UserScreen}/>

@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React, {useState} from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, 
-    ScrollView, Pressable, TextInput } from 'react-native';
+    ScrollView, Pressable, TextInput,Image } from 'react-native';
 import Constants from 'expo-constants';
 import Logo from '../Logo';
 import SimpleLineIcon from 'react-native-vector-icons/SimpleLineIcons';
@@ -9,13 +9,15 @@ import Ionicon from 'react-native-vector-icons/Ionicons';
 import { artData } from '../../../artData';
 import ArtPost from '../utils/ArtPost';
 import LiveAuctions from './LiveAuctions';
+import Collection from './Collection';
+import {Divider} from 'react-native-elements';
 
 
-export default function Home(){
+export default function Home({navigation, route}){
 
     return (
         <View style={styles.userHomeContainer} >
-            <ScrollView>
+            <ScrollView scrollContainerStyle={{justifyContent: 'center'}}>
             <View style={styles.header}>
                 <Text style={styles.headerTitleSmall}>Discover, collect, and sell</Text>
                 <Text style={styles.headerTitleLarge}>Your Digital Art</Text>
@@ -57,6 +59,40 @@ export default function Home(){
                     })
                 }
                 <LiveAuctions/>
+                <Collection/>
+                <View style={{marginHorizontal: 10, marginBottom: 80}} >
+                    <Divider orientation="horizontal" width={1} />
+                </View>
+                <View style={{justifyContent: 'center', alignItems: 'center'}}>
+                    <Image source={require('../../../assets/imageedit_4_3249652613.png')}/>
+                </View>
+                <TouchableOpacity>
+                    <Text style={styles.bidButton}>Earn now</Text>
+                </TouchableOpacity>
+                <TouchableOpacity>
+                    <Text style={styles.viewArtworkBtn}>Discover more</Text>
+                </TouchableOpacity>
+
+                <View style={styles.homeFooter}>    
+                    <View style={{flexDirection:'row', padding: 20, justifyContent:'space-between'}}>
+                        <View>
+                            <Pressable><Text style={{color:'white',marginVertical:4}}>Instagram</Text></Pressable>
+                            <Pressable><Text style={{color:'white',marginVertical:4}}>Twitter</Text></Pressable>
+                            <Pressable><Text style={{color:'white',marginVertical:4}}>Discord</Text></Pressable>
+                            <Pressable><Text style={{color:'white',marginVertical:4}}>Blog</Text></Pressable>
+                        </View>
+                        <View>
+                            <Pressable><Text style={{color:'white',marginVertical:4}}>About</Text></Pressable>
+                            <Pressable><Text style={{color:'white',marginVertical:4}}>Community Guidelines</Text></Pressable>
+                            <Pressable><Text style={{color:'white',marginVertical:4}}>Terms of Services</Text></Pressable> 
+                            <Pressable><Text style={{color:'white',marginVertical:4}}>Privacy</Text></Pressable> 
+                            <Pressable><Text style={{color:'white',marginVertical:4}}>Careers</Text></Pressable> 
+                            <Pressable><Text style={{color:'white',marginVertical:4}}>Help</Text></Pressable>
+                        </View>
+                    </View>
+                    <Divider orientation="horizontal" width={1} color={"white"}/>
+                    <Text style={{color:'white', padding: 20}}>Ⓒ2021 Openart</Text>
+                </View>
             </View>
             </ScrollView>
         </View>
@@ -125,5 +161,8 @@ const styles = StyleSheet.create({
         marginHorizontal: 10,
         textAlign: 'center',
         marginBottom: 120,
+    },
+    homeFooter: {
+        backgroundColor: 'black'
     },
 });

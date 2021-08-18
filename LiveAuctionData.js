@@ -16,7 +16,9 @@ export const auctionArtworks = [
         artistTitle: 'Creator',
         liked: 'false',
         artImageURL: images.image2,
-        artistImageURL: '../../../assets/artist_1.png'
+        artistImageURL: '../../../assets/artist_1.png',
+        sold: true, 
+        soldFor: '2.00'
     },
     {   
         id: 'a3',
@@ -26,7 +28,9 @@ export const auctionArtworks = [
         artistTitle: 'Creator',
         liked: 'false',
         artImageURL: images.image3,
-        artistImageURL: '../../../assets/artist_3.png'
+        artistImageURL: '../../../assets/artist_3.png',
+        sold: true,
+        soldFor: '2.00',
     },
     {   
         id: 'a4',
@@ -36,7 +40,11 @@ export const auctionArtworks = [
         artistTitle: 'Creator',
         liked: 'false',
         artImageURL: images.image4,
-        artistImageURL: '../../../assets/artist_1.png'
+        artistImageURL: '../../../assets/artist_1.png',
+        sold: false,
+        currentBid: '2.00',
+        remainingTimeMinutes: 27,
+        remainingTimeSeconds: 30,
     },
     {   
         id: 'a5',
@@ -46,7 +54,11 @@ export const auctionArtworks = [
         artistTitle: 'Creator',
         liked: 'false',
         artImageURL: images.image5,
-        artistImageURL: '../../../assets/artist_1.png'
+        artistImageURL: '../../../assets/artist_1.png',
+        sold: false,
+        currentBid: '2.00',
+        remainingTimeMinutes: 27,
+        remainingTimeSeconds: 30,
     },
     {   
         id: 'a6',
@@ -56,6 +68,10 @@ export const auctionArtworks = [
         artistTitle: 'Creator',
         liked: 'false',
         artImageURL: images.image6,
-        artistImageURL: '../../../assets/artist_1.png'
+        artistImageURL: '../../../assets/artist_1.png',
+        sold: false,
+        currentBid: '2.00',
+        remainingTimeMinutes: 27,
+        remainingTimeSeconds: 30,
     }
 ]
